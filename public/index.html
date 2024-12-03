@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChatSpot</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&family=Montserrat:wght@600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="chat-container">
+        <div class="chat-header">
+            <h2>ChatSpot</h2>
+            <span id="status">Online</span>
+            <input type="text" id="username-input" placeholder="Enter username">
+            <button onclick="setUsername()">Set Username</button>
+            <button class="set-avatar-tab" onclick="openAvatarPopup()">Set Avatar</button>
+        </div>
+        <div class="chat-messages" id="chat-messages"></div>
+        <div class="chat-input">
+            <input type="text" id="message-input" placeholder="Type a message..." oninput="showTyping()">
+            <input type="file" id="file-input" accept="image/*,application/pdf,application/msword,application/vnd.ms-excel">
+            <button id="send-button">Send</button>
+        </div>
+        <div id="typing-indicator">User is typing...</div>
+        <div id="user-list" class="user-list"></div>
+
+        <!-- Avatar Selection Popup -->
+        <div id="avatar-popup" class="popup">
+            <div class="popup-content">
+                <h3>Select Avatar</h3>
+                <div class="avatar-grid">
+                    <img src="avatar1.png" onclick="selectAvatar('avatar1.png')" class="avatar-option">
+                    <img src="avatar2.png" onclick="selectAvatar('avatar2.png')" class="avatar-option">
+                    <img src="avatar3.png" onclick="selectAvatar('avatar3.png')" class="avatar-option">
+                    <img src="avatar4.png" onclick="selectAvatar('avatar4.png')" class="avatar-option">
+                    <img src="avatar5.png" onclick="selectAvatar('avatar5.png')" class="avatar-option">
+                    <img src="avatar6.png" onclick="selectAvatar('avatar6.png')" class="avatar-option">
+                    <img src="avatar7.png" onclick="selectAvatar('avatar7.png')" class="avatar-option">
+                    <img src="avatar8.png" onclick="selectAvatar('avatar8.png')" class="avatar-option">
+                    <img src="avatar9.png" onclick="selectAvatar('avatar9.png')" class="avatar-option">
+                    <img src="avatar10.png" onclick="selectAvatar('avatar10.png')" class="avatar-option">
+                </div>
+                <button onclick="closeAvatarPopup()">Close</button>
+            </div>
+        </div>
+    </div>
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
